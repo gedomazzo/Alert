@@ -1,6 +1,7 @@
 package com.example.alert;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -55,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         String temp = item.getTitle().toString();
         if (temp.equals("Credints")) {
-
+            Intent shaw = new Intent(this, MyActivityName.class);
+            startActivity(shaw);
         }
 
         return super.onOptionsItemSelected(item);
