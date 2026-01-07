@@ -1,15 +1,13 @@
 package com.example.alert;
 
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,12 +43,88 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void messege(View view) {
-        dmes.show();
         dmes = new AlertDialog.Builder(this);
         dmes.setTitle("Messege");
         dmes.setMessage("this is a messege");
+
+        dmes.show();
     }
 
+    public void img(View view) {
+        dimg = new AlertDialog.Builder(this);
+        dimg.setTitle("Image");
+        dimg.setMessage("this is an image");
+        dimg.setIcon(R.drawable.img);
+
+        dimg.show();
+    }
+
+    public void warning(View view) {
+        dwar = new AlertDialog.Builder(this);
+        dwar.setTitle("Warning");
+        dwar.setMessage("this is a warning");
+
+        dwar.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
 
 
+
+        dwar.show();
+    }
+
+    public void choice(View view) {
+        dcho = new AlertDialog.Builder(this);
+        dcho.setTitle("Choice");
+        dcho.setMessage("this is a choice");
+        dcho.setPositiveButton("red", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                getWindow().getDecorView().setBackgroundColor(Color.RED);
+            }
+        });
+
+        dcho.setNegativeButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+
+        dcho.show();
+    }
+
+    public void color(View view) {
+        dcol = new AlertDialog.Builder(this);
+        dcol.setTitle("Color");
+        dcol.setMessage("this is a color");
+        dcol.setPositiveButton("blue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                getWindow().getDecorView().setBackgroundColor(Color.BLUE);
+            }
+        });
+
+        dcol.setNeutralButton("reset", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+            }
+        });
+
+
+        dcol.setNegativeButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+
+        dcol.show();
+    }
 }

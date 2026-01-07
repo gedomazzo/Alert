@@ -37,6 +37,7 @@
             android:id="@+id/img"
             android:layout_width="match_parent"
             android:layout_height="150px"
+            android:onClick="img"
             android:text="Image" />
 
         <Space
@@ -47,6 +48,7 @@
             android:id="@+id/war"
             android:layout_width="match_parent"
             android:layout_height="150px"
+            android:onClick="warning"
             android:text="Warning" />
 
         <Space
@@ -57,6 +59,7 @@
             android:id="@+id/cho"
             android:layout_width="match_parent"
             android:layout_height="150px"
+            android:onClick="choice"
             android:text="Choice" />
 
         <Space
@@ -67,6 +70,7 @@
             android:id="@+id/col"
             android:layout_width="match_parent"
             android:layout_height="150px"
+            android:onClick="color"
             android:text="Color" />
     </LinearLayout>
 
