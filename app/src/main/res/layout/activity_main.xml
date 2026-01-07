@@ -26,6 +26,7 @@
             android:id="@+id/mess"
             android:layout_width="match_parent"
             android:layout_height="150px"
+            android:onClick="messege"
             android:text="Messege" />
 
         <Space

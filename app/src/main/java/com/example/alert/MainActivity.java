@@ -1,9 +1,11 @@
 package com.example.alert;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -12,10 +14,15 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     Button mes;
+    AlertDialog.Builder dmes;
     Button img;
+    AlertDialog.Builder dimg;
     Button war;
+    AlertDialog.Builder dwar;
     Button cho;
+    AlertDialog.Builder dcho;
     Button col;
+    AlertDialog.Builder dcol;
 
 
 
@@ -28,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,4 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
         merraige();
     }
+
+    public void messege(View view) {
+        dmes.show();
+        dmes = new AlertDialog.Builder(this);
+        dmes.setTitle("Messege");
+        dmes.setMessage("this is a messege");
+    }
+
+
+
 }
